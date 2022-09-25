@@ -1,4 +1,6 @@
-const Pedidos = ({ item }: any) => (
+//import {FC} from "react" = Component Functional
+
+const Pedidos = ({item}: any) => (
   <section
     style={{
       width: "250px",

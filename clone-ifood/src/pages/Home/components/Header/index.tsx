@@ -1,8 +1,9 @@
 import { Button, Flex, Select, Box, Input } from "@chakra-ui/react";
 import { filtersMocks, selectOptionMocks } from "../../../../assets/mocks";
 import { BiSearch } from "react-icons/bi";
+import { FC } from "react"
 
-const Header = () => {
+const Header: FC = () => {
   return (
     <header>
       <Flex

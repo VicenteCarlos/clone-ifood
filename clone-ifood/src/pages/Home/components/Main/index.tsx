@@ -2,16 +2,17 @@ import { Flex, Box, Input } from "@chakra-ui/react";
 import { pedidosMocks, pizzaMocks } from "../../../../assets/mocks";
 import { BiSearch } from "react-icons/bi";
 import { useState } from "react";
-import { IPizzaMocks } from "../../../../assets/mocks/interfaces";
 import { Pedidos } from "./components/Pedidos";
+import { IPizzaMocks } from "../../../../assets/mocks/interfaces";
+import { FC } from "react"
 
-const Main = () => {
+const Main: FC = () => {
   const [search, setSearch] = useState<string>("");
-  const filteredProducts: any = pedidosMocks.filter((item) =>
+  const filteredProducts: IPizzaMocks[] = pedidosMocks.filter((item) =>
     item.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
   );
 
-  console.log(filteredProducts);
+ 
   return (
     <main>
       <Flex>
@@ -70,7 +71,7 @@ const Main = () => {
       </Flex>
       <Flex flexWrap="wrap" justifyContent="center" fontFamily="arial">
         {search.length > 0
-          ? filteredProducts.map((item: any, i: number) => (
+          ? filteredProducts.map((item: IPizzaMocks, i: number) => (
               <Pedidos key={i + 5} item={item} />
             ))
           : pedidosMocks.map((item, i) => <Pedidos key={i + 10} item={item} />)}
