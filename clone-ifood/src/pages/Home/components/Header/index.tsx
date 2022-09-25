@@ -41,7 +41,7 @@ const Header = () => {
           width="23%"
           marginRight="10%"
         >
-          <Box color="#EA1D2C">
+          <Box marginTop="4px" color="#EA1D2C">
             <BiSearch />
           </Box>
           <Input
